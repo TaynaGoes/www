@@ -15,41 +15,61 @@
 <?php
 include_once('./app/controllers/conexao.php');
 
-// Receber dados do formul�rio
+// ##################################################
+// Verifica se um email já está cadastrado.
+function existeEmail($conexao, $email) {
+    $query = "SELECT EMAIL FROM CLIENTES WHERE EMAIL = '". $email . "'";
+
+    $check_mail = $conexao->prepare($query);
+    $check_mail->execute();
+
+    return $check_mail->rowCount();
+}
+// ##################################################
+ 
+ 
+// Receber dados do formul�rio
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-// $dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
-
-// Verificar se cliente clicou no bot�o
+// Verificar se cliente clicou no bot�o
 if (!empty($dados['btnCadCliente'])) {
     $empty_input = false;
+    $errorMessage = NULL;
 
     $dados = array_map('trim', $dados);
 
     if (in_array("", $dados)) {
         $empty_input = true;
-        echo "<script>alert('Necess�rio preencher todos os campos);</script>";
+        echo "<script>alert('Necessário preencher todos os campos);</script>";
     }
 
     if (!$empty_input) {
-        $query_cliente = "INSERT INTO clientes 
-                            (cpf, nome, sobrenome, email, ddd_celular, numero_celular, senha)
-                        VALUES
-                            ('" . $dados['cpf'] . "',
-                             '" . $dados['nome'] . "',
-                             '" . $dados['sobrenome'] . "',
-                             '" . $dados['email'] . "',
-                             '" . $dados['ddd'] . "',
-                             '" . $dados['numero_celular'] . "',
-                             '" . $dados['senha'] . "')";
+        if (existeEmail($conexao, $dados['email'])) {
+            $errorMessage = 'Este email já está cadastrado!';
+        }
+        else {
+            $query_cliente = "INSERT INTO clientes 
+                        (cpf, nome, sobrenome, email, ddd_celular, numero_celular, senha)
+                    VALUES
+                        ('" . $dados['cpf'] . "',
+                        '" . $dados['nome'] . "',
+                        '" . $dados['sobrenome'] . "',
+                        '" . $dados['email'] . "',
+                        '" . $dados['ddd'] . "',
+                        '" . $dados['numero_celular'] . "',
+                        '" . $dados['senha'] . "')";
 
-        $cad_cliente = $conexao->prepare($query_cliente);
-        $cad_cliente->execute();
-        if ($cad_cliente->rowCount()) {
-            echo "<script>alert('Email enviado com Sucesso!);</script>";
-            unset($dados);
-        } else {
-            echo "<script>alert('Erro de Cadastro);</script>";
+            $cad_cliente = $conexao->prepare($query_cliente);
+            $cad_cliente->execute();
+
+            if ($cad_cliente->rowCount()) {
+                $errorMessage = 'Cadastro realizado com sucesso';
+
+                unset($dados);
+            } 
+            else {
+                $errorMessage = 'Não foi possível realizar o cadastro. Entre em contato com um administrador.';
+            }
         }
     }
 }
@@ -66,7 +86,7 @@ if (!empty($dados['btnCadCliente'])) {
         </div>
         <div class="forms_field teste-form">
             <input type="text" placeholder="DDD" class="forms_field-input " id="ddd_celular" name="ddd" maxlength="2" />
-            <input type="text" placeholder="N�mero" class="forms_field-input " id="celular" name="numero_celular" />
+            <input type="text" placeholder="Número" class="forms_field-input " id="celular" name="numero_celular" />
         </div>
         <div class="forms_field">
             <input type="text" placeholder="CPF" class="forms_field-input" id="cpf" name="cpf" />
@@ -91,3 +111,11 @@ if (!empty($dados['btnCadCliente'])) {
         </div>
     </form>
 </div>
+
+<?php
+    if (isset($errorMessage)) {
+        if ($errorMessage != NULL) {
+            echo "<script>alert('" . $errorMessage . "');</script>";
+        }
+    }
+?>

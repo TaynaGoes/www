@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="pt-br">
         <head>
             <meta charset="UTF-8">
@@ -19,9 +19,9 @@
         </head>
 
     <body>
-        <?php           
+        <?php   
             include_once('header.php');
-            include_once('films-cartaz.php');
+            include_once('carrossel-filmes.php');
             include_once('newsletter.php');
         ?>
 

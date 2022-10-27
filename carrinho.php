@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="pt-br">
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,12 +17,11 @@
             <link rel="stylesheet" type=" text/css " href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">   
         </head>
-<body>
-       
-        <input type="hidden" name="linha" value="<?=$_GET['linha']; ?>">
+        
+        <body>
+            <?php   
+                include_once('header.php');
+            ?>   
+        </body>
 
-        <?php
-            echo $_GET['linha'];
-        ?>
-</body>
-</html>
+ </html>

@@ -59,7 +59,6 @@
 </style>
 
 
-
 <section class="section-newsletter">
     <div class="container">
         <div class="row">

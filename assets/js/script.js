@@ -7,7 +7,6 @@ function selecionarAbaNavegacao() {
     let poltronas = document.getElementById("poltronas");
     let bomboniere = document.getElementById("bomboniere");
     let pagamento = document.getElementById("pagamento");
-    let ingresso = document.getElementById("ingresso");
 
     if (filmes.checked == true) {
         poltronas.checked = true;
@@ -25,8 +24,7 @@ function selecionarAbaNavegacao() {
     }
 
     if (pagamento.checked == true) {
-        ingresso.checked = true;
-
+        filmes.checked = true;
         return;
     }
 }
@@ -84,31 +82,40 @@ const closeModal = (modal) => {
 // ------------------------------- //
 //          add product cart       //
 // ------------------------------- //
-function incrementQty() {
-    var value = document.querySelector('input[name="qty"]').value;
-    var cardQty = document.querySelector(".cart-qty");
-    var cardPrice = document.querySelector(".price");
-    let price = 10.00
+function incrementQty(id, price) {
+    var input = 'input[name="qty_'.concat(id, '"]');
+
+    var value = document.querySelector(input).value;
+    var cardPrice = document.getElementById("price_".concat(id));
+
     value = isNaN(value) ? 1 : value;
     value++;
-    document.querySelector('input[name="qty"]').value = value;
-    cardQty.innerHTML = value;
-    cardPrice.innerHTML = value * price;
-    console.log(cardPrice);
 
+    document.querySelector(input).value = value;
+
+    if (value > 0) {
+        cardPrice.innerText = "R$ ".concat((value * price), ",00");
+    }
+    else {
+        cardPrice.innerText = "R$ ".concat(price, ",00");
+    }
 }
 
-function decrementQty() {
-    var value = document.querySelector('input[name="qty"]').value;
-    var cardQty = document.querySelector(".cart-qty");
-    var cardPrice = document.querySelector(".price");
-    let price = 10.00
+function decrementQty(id, price) {
+    var input = 'input[name="qty_'.concat(id, '"]');
+
+    var value = document.querySelector(input).value;
+    var cardPrice = document.getElementById("price_".concat(id));
+
     value = isNaN(value) ? 1 : value;
-    value > 1 ? value-- : value;
-    document.querySelector('input[name="qty"]').value = value;
-    cardQty.innerHTML = value;
-    cardPrice.innerHTML = value * price;
-    console.log(cardPrice);
+    value > 0 ? value-- : value;
+
+    document.querySelector(input).value = value;
+
+    if (value > 0) {
+        cardPrice.innerText = "R$ ".concat((value * price), ",00");
+    }
+    else {
+        cardPrice.innerText = "R$ ".concat(price, ",00");
+    }
 }
-
-

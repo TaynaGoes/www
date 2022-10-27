@@ -25,8 +25,7 @@
                 $_SESSION['cpf'] = $row_cliente['cpf'];
                 $_SESSION['nome'] = $row_cliente['nome'];
 
-                header("Location: index.php");
-                
+                header("Location: index.php"); 
             } else {
                 $_SESSION['msg_erro'] = "Senha Incorreta!";
             }
