@@ -1,0 +1,251 @@
+.tabs {
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    background: #000;
+    padding: 50px;
+    height: 100%;
+    padding-bottom: 80px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 5px;
+    min-width: 240px;
+}
+
+.tabs span {
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.tabs input[name=tab-control] {
+    display: none;
+}
+
+.tabs .content section h2,
+.tabs ul li label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #428bff;
+}
+
+.tabs ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.tabs ul li {
+    box-sizing: border-box;
+    flex: 1;
+    width: 25%;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.tabs ul li label {
+    transition: all 0.3s ease-in-out;
+    color: red;
+    padding: 5px auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.tabs ul li label:hover,
+.tabs ul li label:focus,
+.tabs ul li label:active {
+    outline: 0;
+    color: #bec5cf;
+}
+
+
+.tabs .slider {
+    position: relative;
+    width: 25%;
+    transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+}
+
+.tabs .slider .indicator {
+    position: relative;
+    width: 30px;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 4px;
+    background: var(--clr-blue);
+    border-radius: 1px;
+    display: flex;
+    justify-content: center;
+}
+
+.tabs .content {
+    margin-top: 30px;
+}
+
+.tabs .content section {
+    display: none;
+    animation-name: content;
+    animation-direction: normal;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    line-height: 1.4;
+}
+
+
+.tabs input[name=tab-control]:nth-of-type(1):checked~ul>li:nth-child(1)>label,
+.tabs input[name=tab-control]:nth-of-type(2):checked~ul>li:nth-child(2)>label,
+.tabs input[name=tab-control]:nth-of-type(3):checked~ul>li:nth-child(3)>label,
+.tabs input[name=tab-control]:nth-of-type(4):checked~ul>li:nth-child(4)>label,
+.tabs input[name=tab-control]:nth-of-type(5):checked~ul>li:nth-child(5)>label {
+    cursor: default;
+    color: #428bff;
+}
+
+.tabs input[name=tab-control]:nth-of-type(1):checked~.slider {
+    transform: translateX(-8%);
+}
+
+.tabs input[name=tab-control]:nth-of-type(2):checked~.slider {
+    transform: translateX(70%);
+}
+
+.tabs input[name=tab-control]:nth-of-type(3):checked~.slider {
+    transform: translateX(150%);
+}
+
+.tabs input[name=tab-control]:nth-of-type(4):checked~.slider {
+    transform: translateX(230%);
+}
+
+.tabs input[name=tab-control]:nth-of-type(5):checked~.slider {
+    transform: translateX(315%);
+}
+
+
+.tabs input[name=tab-control]:nth-of-type(1):checked~form>.content>section:nth-child(1),
+.tabs input[name=tab-control]:nth-of-type(2):checked~form>.content>section:nth-child(2),
+.tabs input[name=tab-control]:nth-of-type(3):checked~form>.content>section:nth-child(3),
+.tabs input[name=tab-control]:nth-of-type(4):checked~form>.content>section:nth-child(4),
+.tabs input[name=tab-control]:nth-of-type(5):checked~form>.content>section:nth-child(5) {
+    display: block;
+}
+
+
+.box_btn-next{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.button_click-next {
+    text-align: end;
+    text-transform: uppercase;
+    width: 180px;
+    color: var(--color-font);
+    padding: 5px;
+    font-size: 16px;
+    border: 0;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+    overflow: hidden;
+    font-weight: 600;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button_click-next img{
+    height: 35px;
+}
+
+
+input[type=submit].btn-prox:focus~.tabs input[name=tab-control]:nth-of-type(2):checked~.content>section:nth-child(2) {
+    display: block;
+}
+
+@-webkit-keyframes content {
+    from {
+        opacity: 0;
+        transform: translateY(5%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes content {
+    from {
+        opacity: 0;
+        transform: translateY(5%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@media (max-width: 1000px) {
+    .tabs ul li label {
+        white-space: initial;
+    }
+
+    .tabs ul li label br {
+        display: initial;
+    }
+
+    .tabs ul li label svg {
+        height: 1.5em;
+    }
+}
+
+@media (max-width: 600px) {
+    .tabs ul li label {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .tabs ul li label span {
+        display: none;
+    }
+
+    .tabs .slider {
+        display: none;
+    }
+
+    .tabs .content {
+        margin-top: 20px;
+    }
+
+    .tabs .content section h2 {
+        display: block;
+    }
+}
+
+
+.tabs ul li label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+
+.tabs ul li label img {
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,204 @@
+/*
+===============
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+===============
+Variables
+===============
+*/
+:root {
+    --white: #fff;
+    --black:#000;
+    --background-main: #000;
+    --background-second: #181818;
+    --color-red: #bf2a2a;
+    --color-red-hover: #852525;
+    --color-blue: #010c12;
+    --color-font: #fff;
+    --clr-black: #222;
+    --clr-blue: #0876b3;
+    --cr-gray:#808080;
+    --clr-primary: #181818;
+    --clr-input:#ccc;
+    --clr-white-second:#ccc;
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+}
+
+/*
+===============
+Global Styles
+===============
+*/
+
+/* .row > *{
+    width: initial !important;
+} */
+
+.col-12{
+    width: 100%;
+}
+
+*,
+body,
+::after,
+::before {
+    color: rgb(98, 232, 26);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+section.secao{
+    background-color: red;
+}
+
+ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    font-family: var(--ff-primary);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 0.875rem;
+}
+
+p {
+    margin-bottom: 1.25rem;
+    color: var(--clr-grey-5);
+}
+
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    body {
+        font-size: 1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        line-height: 1;
+    }
+}
+
+/*
+==================
+Styles Class Geral
+==================
+*/
+
+@font-face {
+    font-family: Arial, Helvetica, sans-serif;
+    src: url(/assets/fonts/Helvetica-Font/Helvetica-Bold.ttf)
+}
+
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+}
+
+
+select.select-box {
+    width: 100%;
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    padding: 0 1em;
+    color: #fff;
+    background-color:  var(--clr-blue);
+    background-image: none;
+    cursor: pointer;
+    border: none;
+}
+
+.container-select {
+    position: relative;
+    display: flex;
+    width: 200px;
+    height: 3em;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+
+.container-select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color:var(--clr-blue);
+    transition: .25s all ease;
+    pointer-events: none;
+}
+
+.container-select:hover::after {
+    color: var;
+}

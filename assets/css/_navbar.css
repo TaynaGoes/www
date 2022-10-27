@@ -1,0 +1,135 @@
+/* 
+===============
+Navbar
+===============
+*/
+nav {
+    background: #000;
+    box-shadow: var(--light-shadow);
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.nav-toggle {
+    font-size: 1.5rem;
+    color: var(--clr-primary-5);
+    background: transparent;
+    border-color: transparent;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.nav-toggle:hover {
+    color: var(--clr-primary-1);
+    transform: rotate(90deg);
+}
+
+.links li {
+    padding: 10px 0;
+}
+
+.links li:hover {
+    transform: scale(120%);
+}
+
+.links a {
+    transition: 0.3s ease;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 15px;
+    text-transform: uppercase;
+}
+
+.links a:hover {
+    color: var(--color-red);
+}
+
+.links {
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.show-links {
+    height: 10rem;
+}
+
+/* icon menu */
+.icon-film {
+    color: #fff;
+}
+
+.account-item{
+    color:var(--white);
+    display: flex;
+    align-items: center;
+}
+
+.account-item a{
+    color: var(--white);
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.account-item a:hover{
+    text-decoration: underline;
+    color: var(--white);
+}
+
+.account-item span{
+    background-color: var(--clr-blue);
+    padding: 3px 6px;
+    border-radius: 3px;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.account-menu{
+    display: flex;
+}
+
+.account-item .fa-solid{
+    color: var(--clr-blue);
+}
+
+
+@media screen and (min-width: 800px) {
+    .nav-center {
+        max-width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .nav-header {
+        padding: 0;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .links {
+        height: auto;
+        display: flex;
+        margin: 0;
+    }
+
+    .links a {
+        padding: 0;
+    }
+
+    .links a:hover {
+        padding: 0;
+        background: transparent;
+    }
+}

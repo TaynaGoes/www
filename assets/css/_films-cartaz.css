@@ -1,0 +1,220 @@
+.container-films {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    padding-top: 8vh;
+    background-color: #181818;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-content_films {
+    width: 270px;
+    min-height: 800px;
+    position: relative;
+}
+
+li.box-content_films {
+    height: 550px;
+}
+
+.content-films_img {
+    width: 230px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 9999;
+}
+
+.img-film {
+    border-radius: 5px;
+    display: flex;
+    width: 230px;
+    height: 350px;
+    box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+}
+
+.ticket-container {
+    background: #fff;
+    width: 270px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+}
+
+.box-content_films:hover .ticket-container {
+    opacity: 1;
+    animation: infoFilms 0.6s linear;
+}
+
+
+
+.ticket__content {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+.ticket__movie-title {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-red);
+}
+
+.ticket__movie-slogan {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.ticket__info {
+    text-decoration: none;
+    color: var(--clr-blue);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+
+.ticket_button-buy {
+    font-size: 1rem;
+    text-transform: uppercase;
+    width: 100%;
+    background: var(--background-second);
+    color: var(--color-font);
+    padding: 12px 35px;
+    font-size: 18px;
+    border: 0;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+    overflow: hidden;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.ticket_button-buy:before {
+    font-family: FontAwesome;
+    content: "\f217";
+    position: absolute;
+    top: 11px;
+    left: -50px;
+    transition: all 100ms ease;
+    color: var(--color-red);
+}
+
+.ticket_button-buy:hover:before {
+    left: 35px;
+}
+
+.ticket_button-buy:hover {
+    box-shadow: 1px 3px 8px #000;
+}
+
+.categoria-position {
+    background: var(--color-red);
+    border-radius: 0 5px 5px 0;
+    color: var(--white);
+    font-size: 13px;
+    left: 15px;
+    padding: 3px 15px;
+    position: absolute;
+    top: 8px;
+    z-index: 99999;
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ticket__movie-plus {
+    margin: 0;
+}
+
+.ticket__movie-plus a {
+    color: pink;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--clr-blue);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* ----- SLICK ------- */
+.slick-prev {
+    display: none !important;
+}
+
+.slick-list.draggable {
+    padding: 0 !important;
+}
+
+
+.movie-tags {
+    background-color: #222222;
+    position: absolute;
+    z-index: 9999999999999;
+    opacity: 0.8;
+    bottom: 0;
+    width: 100%;
+    padding: 8px 8px 8px 0px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.movie-tags div.selo-rating .movie-rating {
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 5px;
+    height: 33px;
+    line-height: 30px;
+    min-width: 30px;
+    max-width: 50px;;
+    margin: 2.5px 0;
+    padding: 0 4px;
+    position: relative;
+    left: 0;
+    top: 0;
+    font-weight: 800;
+}
+
+
+.movie-rating span {
+    color: var(--white);
+}
+
+.box-content_films:hover .movie-tags {
+    opacity: 0;
+    transition: .2ms;
+}
+
+/* classificacao */
+.rating-livre {
+    background-color: #00bb22 !important;
+}
+
+.rating-12 {
+    background-color: #f1cf0d !important;
+}
+
+.rating-14 {
+    background-color: #f6962d !important;
+}
+
+.rating-16 {
+    background-color: #dd021c !important;
+}
+
+.rating-18 {
+    background-color: #000c !important;
+}
