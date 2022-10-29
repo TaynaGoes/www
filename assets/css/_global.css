@@ -42,9 +42,6 @@ Global Styles
 ===============
 */
 
-/* .row > *{
-    width: initial !important;
-} */
 
 .col-12{
     width: 100%;
@@ -54,7 +51,7 @@ Global Styles
 body,
 ::after,
 ::before {
-    color: rgb(98, 232, 26);
+    color:#000;
     margin: 0;
     padding: 0;
     box-sizing: border-box;

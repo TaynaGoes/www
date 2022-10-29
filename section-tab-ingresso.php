@@ -89,8 +89,6 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" name="button" id="button" value="Enviar" style="background-color: red;" />
         </div>
     </div>
-
 </div>

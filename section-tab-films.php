@@ -155,6 +155,10 @@ $result_sessoes->execute();
                             <img src="./imagens/arquivos-site/elenco.png" alt="">
                             <span class="span-film">Atores: <?= $FilmeAtor1 ?>, <?= $FilmeAtor2 ?>, <?= $FilmeAtor3 ?> </span>  
                         </div>
+                        <div class="row-info-film">
+                            <img src="./imagens/arquivos-site/price.png" alt="">
+                            <span class="span-film">Inteira: R$40,00 | Meia: R$20,00</span>  
+                        </div>
                     </div>
 
                     <div class="select-menu">

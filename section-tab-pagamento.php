@@ -1,7 +1,11 @@
 <div class="content-section-pagamento">
     <div class="box-info-pedido">
-        <h4>Informações do pedido</h4>
-        <span>Nome Filme</span>
+        <h4 style="color: red">Informações do pedido</h4>
+        <span>Nome Filme: XXXXXX</span>
+        <img style=" width: 100px; heigth: 100px; display: block;" src="https://2.bp.blogspot.com/-TOCRLYBV3N4/UsbbAXBZmkI/AAAAAAAAPuM/DbPHOcuv6HA/s1600/A-Menina-Que-Roubava-Livros-capa-filme-1.jpg" alt="">
+        
+        <!-- aqui qnd mostrar as poltronas ai sim vai pedir pra falar qual e inteira e qual e meia (o modal que tem la em poltronas "ver poltronas selecionadas")
+        ele sai de la e depois que ja confirmou na hora de pagar e onde vai apagar se e meia ou inteira -->
         <span>Poltronas Selecionadas </span>
         <br> <br>
         <span>Pipoca 3</span>

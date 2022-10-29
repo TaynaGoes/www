@@ -105,39 +105,35 @@
 
 .tabs input[name=tab-control]:nth-of-type(1):checked~ul>li:nth-child(1)>label,
 .tabs input[name=tab-control]:nth-of-type(2):checked~ul>li:nth-child(2)>label,
-.tabs input[name=tab-control]:nth-of-type(3):checked~ul>li:nth-child(3)>label,
-.tabs input[name=tab-control]:nth-of-type(4):checked~ul>li:nth-child(4)>label,
-.tabs input[name=tab-control]:nth-of-type(5):checked~ul>li:nth-child(5)>label {
+.tabs input[name=tab-control]:nth-of-type(3):checked~ul>li:nth-child(3)>label {
     cursor: default;
     color: #428bff;
 }
 
 .tabs input[name=tab-control]:nth-of-type(1):checked~.slider {
-    transform: translateX(-8%);
+    transform: translateX(15%);
 }
 
 .tabs input[name=tab-control]:nth-of-type(2):checked~.slider {
-    transform: translateX(70%);
-}
-
-.tabs input[name=tab-control]:nth-of-type(3):checked~.slider {
     transform: translateX(150%);
 }
 
-.tabs input[name=tab-control]:nth-of-type(4):checked~.slider {
-    transform: translateX(230%);
+.tabs input.input_radio-label[name=tab-control]:nth-of-type(1):checked~.slider {
+    transform: translateX(50%);
 }
 
-.tabs input[name=tab-control]:nth-of-type(5):checked~.slider {
-    transform: translateX(315%);
+.tabs input.input_radio-label[name=tab-control]:nth-of-type(2):checked~.slider {
+    transform: translateX(300%);
 }
 
+
+.tabs input[name=tab-control]:nth-of-type(3):checked~.slider {
+    transform: translateX(285%);
+}
 
 .tabs input[name=tab-control]:nth-of-type(1):checked~form>.content>section:nth-child(1),
 .tabs input[name=tab-control]:nth-of-type(2):checked~form>.content>section:nth-child(2),
-.tabs input[name=tab-control]:nth-of-type(3):checked~form>.content>section:nth-child(3),
-.tabs input[name=tab-control]:nth-of-type(4):checked~form>.content>section:nth-child(4),
-.tabs input[name=tab-control]:nth-of-type(5):checked~form>.content>section:nth-child(5) {
+.tabs input[name=tab-control]:nth-of-type(3):checked~form>.content>section:nth-child(3){
     display: block;
 }
 

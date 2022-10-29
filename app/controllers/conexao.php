@@ -2,7 +2,7 @@
     $host = 'localhost';
     $dbname = 'cinetec';
     $user = 'root';
-    $pass = 'dwHandle';
+    $pass = '';
 
     try {
         $conexao = new PDO('mysql:host=' . $host . ';dbname=' . $dbname, $user, $pass);

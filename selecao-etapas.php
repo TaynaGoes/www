@@ -94,19 +94,7 @@
                                 </label>
                             </li>
 
-                            <li title="Pagamento Cartão">
-                                <label for="pagamento" role="button">
-                                    <img src="./imagens/arquivos-site/cartao.png" alt="">
-                                    <span>Pagamento</span>
-                                </label>
-                            </li>
-
-                            <li title="Ingresso">
-                                <label for="ingresso" role="button">
-                                    <img src="./imagens/arquivos-site/ticket.png" alt="">
-                                    <span>Ingresso</span>
-                                </label>
-                            </li>
+            
                         </ul>
 
                         <div class="slider">
@@ -114,7 +102,7 @@
                         </div>
 
                         <!-- conteudo tabs -->
-                        <form action="compra.php" method="post">
+                        <form action="selecao-pagamento.php" method="post">
                             <div class="content">
                                 <!-- filmes -->
                                 <section class="section-content-film">
@@ -128,14 +116,7 @@
                                 <section class="section-bomboniere">
                                     <?php include("section-tab-bomboniere.php"); ?>
                                 </section>
-                                <!-- pagamento cartao -->
-                                <section class="section-pagamento">
-                                    <?php include("section-tab-pagamento.php"); ?>
-                                </section>
-                                <!-- voucher ingresso -->
-                                <section class="ticket-ingresso">
-                                    <?php include("section-tab-ingresso.php"); ?>
-                                </section>
+                
                             </div>
                         </form>
                     </div>

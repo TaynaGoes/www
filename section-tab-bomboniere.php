@@ -21,9 +21,7 @@
         <div class="col-12">
             <div class="box-select">
                 <span class="span-filter">Filtrar por Categoria: </span>
-                <select class=" custom-select categoria-produto" placeholder="Categoria">      
-          
-                </select>
+                <select class=" custom-select categoria-produto" placeholder="Categoria"></select> </select>
             </div>
         </div>
     </div>
@@ -71,7 +69,7 @@
                 <?php } ?>
             </ul>
             <div class="box_btn-next">
-                <div class="button_click-next" onclick="selecionarAbaNavegacao()"><img src="./imagens/arquivos-site/arrow-next.png" alt=""></div>
+                 <input type="submit" name="button" id="button" value="Enviar" style="background-color: red;" />
             </div>
 
         </div>
